@@ -10,7 +10,11 @@ const MovieList = ({ movies, searchName,SearchRating }) => {
         flexWrap: "wrap"
       }}
     >
-      {movies.filter((el)=> el.name.toLowerCase().includes(searchName.toLowerCase())&& el.rating >=SearchRating) 
+      {movies.filter((el)=> (el.name.toLowerCase().includes(searchName.toLowerCase() ) ||
+       el.date == searchName )
+      &&
+       el.rating >=SearchRating
+        )
       
       .map((el) => (
         <MovieCard el={el} />

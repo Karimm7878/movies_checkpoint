@@ -1,10 +1,11 @@
 import ReactStars from "react-stars";
+import {Link} from 'react-router-dom'
 const MovieCard = ({ el }) => {
   console.log(el);
   return (
     <div className="screen-2">
       <div className="top-image">
-        <img src={el.image} alt="poster" />
+       <Link to={`/trailer/${el.id}`}> <img src={el.image} alt="poster" /></Link>
       </div>
 
       <div className="main-heading">
